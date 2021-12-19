@@ -22,12 +22,12 @@
     set smarttab
     set shiftwidth=4
     set softtabstop=4
-    set scrolloff=99
     set expandtab
     set autoindent
 " }}}
 
 "" OTHER {{{
+    set scrolloff=99
     set title
     set colorcolumn=150
 
