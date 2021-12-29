@@ -1,17 +1,18 @@
 " PLUGINS {{{
     call plug#begin('~/.vim/plugged')
-    Plug 'scrooloose/nerdtree',{ 'on': 'NERDTreeToggle' }
-    Plug 'jiangmiao/auto-pairs'
-    Plug 'ctrlpvim/ctrlp.vim'
-    Plug 'easymotion/vim-easymotion'
-    Plug 'rhysd/vim-clang-format'
-    Plug 'pbrisbin/vim-colors-off'
+        Plug 'scrooloose/nerdtree',{ 'on': 'NERDTreeToggle' }
+        Plug 'jiangmiao/auto-pairs'
+        Plug 'ctrlpvim/ctrlp.vim'
+        Plug 'easymotion/vim-easymotion'
+        "Plug 'rhysd/vim-clang-format'
+        Plug 'pbrisbin/vim-colors-off'
+        Plug 'morhetz/gruvbox'
     call plug#end()
-
 " }}}
 
 " COLORS {{{
     colorscheme off
+    "colorscheme gruvbox
     "set background=light
     set background=dark
     highlight ColorColumn ctermbg=darkgray
@@ -40,6 +41,7 @@
     set ignorecase
 
     set encoding=utf8
+    set fileencodings=utf-8,cp1251,koi8-r,cp866
 
     set mousehide
     set textwidth=100
@@ -73,17 +75,14 @@ set number relativenumber
     map <C-j> : bn <CR>
     map <C-k> : bp <CR>
     map <C-h> : bd <CR>
-    map <leader>m :!./build.sh <CR>
-    "set makeprg=make
-    "set makeprg=./build.sh
-    map <leader>c :copen <CR>
+    map <leader>m :!make <CR>
 
     nnoremap Y y$
 
     map <leader>ll :w <CR>
-    autocmd FileType javascript,c,cpp,objc map <leader>ll :ClangFormat <CR> :w <CR>
-    autocmd FileType javascript,c,cpp,objc nnoremap <buffer><Leader>f :<C-u>ClangFormat<CR>
-    autocmd FileType javascript,cpp,objc vnoremap <buffer><Leader>f :ClangFormat<CR>
+    "autocmd FileType javascript,c,cpp,objc map <leader>ll :ClangFormat <CR> :w <CR>
+    "autocmd FileType javascript,c,cpp,objc nnoremap <buffer><Leader>f :<C-u>ClangFormat<CR>
+    "autocmd FileType javascript,cpp,objc vnoremap <buffer><Leader>f :ClangFormat<CR>
     "autocmd FileType c,cpp,objc ClangFormatAutoToggle
 
 " }}}
@@ -140,15 +139,15 @@ endfunction
 " }}}
 
 " AUTOFORMAT {{{
-let g:clang_format#style_options = {
-            \ "BasedOnStyle" : "Google",
-            \ "FixNamespaceComments" : "false",
-            \ "ColumnLimit" : 150,
-            \ "UseTab" : "Never",
-            \ "SpaceAfterTemplateKeyword" : "false",
-            \ "SpaceAfterCStyleCast" : "true",
-            \ "AlignConsecutiveAssignments" : "true",
-            \ "AlignTrailingComments" : "true",
-            \ "AllowShortLambdasOnASingleLine" : "false",
-            \ "AllowShortFunctionsOnASingleLine" : "false"}
+"let g:clang_format#style_options = {
+"            \ "BasedOnStyle" : "Google",
+"            \ "FixNamespaceComments" : "false",
+"            \ "ColumnLimit" : 150,
+"            \ "UseTab" : "Never",
+"            \ "SpaceAfterTemplateKeyword" : "false",
+"            \ "SpaceAfterCStyleCast" : "true",
+"            \ "AlignConsecutiveAssignments" : "true",
+"            \ "AlignTrailingComments" : "true",
+"            \ "AllowShortLambdasOnASingleLine" : "false",
+"            \ "AllowShortFunctionsOnASingleLine" : "false"}
 " }}}
