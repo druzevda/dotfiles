@@ -1,2 +1,2 @@
-# My .vimrc
+#My Linux config files for everyone
 
