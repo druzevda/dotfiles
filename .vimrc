@@ -76,6 +76,9 @@ map <leader>m :!make <CR>
 
 nnoremap Y y$
 
+map j gj
+map k gk
+
 map <leader>ll :w <CR>
 "autocmd FileType javascript,c,cpp,objc map <leader>ll :ClangFormat <CR> :w <CR>
 "autocmd FileType javascript,c,cpp,objc nnoremap <buffer><Leader>f :<C-u>ClangFormat<CR>
