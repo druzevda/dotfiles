@@ -1,3 +1,8 @@
+let g:ctrlp_match_window = 'bottom,order:ttb'
+let g:ctrlp_switch_buffer = 0
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_user_command = 'ag %s -l --nocolor  -g ""'
+
 call plug#begin('~/.vim/plugged')
     Plug 'scrooloose/nerdtree',{ 'on': 'NERDTreeToggle' }
     Plug 'jiangmiao/auto-pairs'
@@ -9,12 +14,13 @@ call plug#begin('~/.vim/plugged')
     "Plug 'rhysd/vim-clang-format'
 call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-colorscheme off
+"colorscheme off
 set background=dark
 highlight ColorColumn ctermbg=darkgray
 set number relativenumber
+syntax off
 
-"colorscheme gruvbox
+colorscheme gruvbox
 "set background=light
 "set number
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -76,8 +82,8 @@ map <leader>m :!make <CR>
 
 nnoremap Y y$
 
-map j gj
-map k gk
+nnoremap j gj
+nnoremap k gk
 
 map <leader>ll :w <CR>
 "autocmd FileType javascript,c,cpp,objc map <leader>ll :ClangFormat <CR> :w <CR>
