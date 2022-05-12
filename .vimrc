@@ -5,6 +5,10 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor  -g ""'
 
 call plug#begin('~/.vim/plugged')
     Plug 'scrooloose/nerdtree',{ 'on': 'NERDTreeToggle' }
+
+    Plug 'xolox/vim-colorscheme-switcher'
+    Plug 'xolox/vim-misc'
+
     Plug 'jiangmiao/auto-pairs'
     Plug 'ctrlpvim/ctrlp.vim'
     Plug 'easymotion/vim-easymotion'
@@ -18,16 +22,17 @@ call plug#end()
 set background=dark
 highlight ColorColumn ctermbg=darkgray
 set number relativenumber
-syntax off
+syntax on
 
-colorscheme gruvbox
+colorscheme industry
+"colorscheme gruvbox
 "set background=light
 "set number
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set tabstop=4
+set tabstop=2
 set smarttab
-set shiftwidth=4
-set softtabstop=4
+set shiftwidth=2
+set softtabstop=2
 set expandtab
 set autoindent
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -79,6 +84,10 @@ map <C-j> : bn <CR>
 map <C-k> : bp <CR>
 map <C-h> : bd <CR>
 map <leader>m :!make <CR>
+map qq :q! <CR>
+
+nnoremap <Up> : NextColorScheme <CR>
+nnoremap <Down> : PrevColorScheme <CR>
 
 nnoremap Y y$
 
