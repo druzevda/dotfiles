@@ -24,8 +24,8 @@ highlight ColorColumn ctermbg=darkgray
 set number relativenumber
 syntax on
 
-colorscheme industry
-"colorscheme gruvbox
+"colorscheme industry
+colorscheme gruvbox
 "set background=light
 "set number
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
