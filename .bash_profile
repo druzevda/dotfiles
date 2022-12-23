@@ -1,6 +1,3 @@
-# my settings
-PS1='${debian_chroot:+($debian_chroot)}\[\e[1;35m\]$(pwd)\[\033[00m\] '
-
 # color for directories
 LS_DIR_COLOR="di=1;34:"
 LS_COLORS=$LS_COLORS$LS_DIR_COLOR
@@ -27,7 +24,6 @@ function git_branch() {
 # Set the prompt.
 
 function bash_prompt(){
-  PS1='${debian_chroot:+($debian_chroot)}'${blu}'('${red}'$(git_branch)'${blu}')'${pur}' \W'${grn}' \$ '${clr}
+  PS1=${ylw}'\h ${debian_chroot:+($debian_chroot)}'${blu}'('${red}'$(git_branch)'${blu}')'${pur}' \w'${grn}' \$ '${clr}
 }
-
 bash_prompt
