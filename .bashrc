@@ -90,7 +90,7 @@ fi
 
 # some more ls aliases
 alias idea='~/Downloads/idea-IU-222.4345.14/bin/idea.sh > /dev/null 2> /dev/null &'
-alias ll='ls -alF'
+alias ll='ls -alhtF'
 alias lynx='lynx -vikeys'
 alias la='ls -A'
 alias l='ls -CF'
