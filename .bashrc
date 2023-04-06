@@ -85,16 +85,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-
-# some more ls aliases
-alias idea='~/Downloads/idea-IU-222.4345.14/bin/idea.sh > /dev/null 2> /dev/null &'
-alias ll='ls -alhtF'
-alias lynx='lynx -vikeys'
-alias la='ls -A'
-alias l='ls -CF'
-alias gitlog='git log --graph --oneline --pretty=short'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
