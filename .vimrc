@@ -1,10 +1,24 @@
+" prerequisite tags
+set nocp
+filetype plugin on
+" configure tags - add additional tags here or comment out not-used ones
+set tags+=~/.vim/tags/curses
+
+" build tags of your own project with CTRL+F12
+"map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+noremap <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<cr>
+inoremap <F12> <Esc>:!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<cr>
+
+"''''''''''''''''''''''''''''''''''''''''''''
 let g:ctrlp_match_window = 'bottom,order:ttb'
 let g:ctrlp_switch_buffer = 0
 let g:ctrlp_working_path_mode = 0
-let g:ctrlp_user_command = 'ag %s -l --nocolor  -g ""'
+"let g:ctrlp_user_command = 'ag %s -l --nocolor  -g ""'
+let g:ctrlp_user_command = 'ag %s -l  -g ""'
 
 call plug#begin('~/.vim/plugged')
-    Plug 'scrooloose/nerdtree',{ 'on': 'NERDTreeToggle' }
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
 
     Plug 'xolox/vim-colorscheme-switcher'
     Plug 'xolox/vim-misc'
@@ -14,8 +28,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'easymotion/vim-easymotion'
     Plug 'pbrisbin/vim-colors-off'
     Plug 'morhetz/gruvbox'
-
-    "Plug 'rhysd/vim-clang-format'
 call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "colorscheme off
@@ -38,7 +50,7 @@ set autoindent
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set wildmenu
 set wildmode=list:longest
-set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
+set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx,*.toc,*.aux
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set scrolloff=99
 set title
@@ -79,12 +91,16 @@ nmap f <Plug>(easymotion-overwin-f)
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 
-map <C-N> : NERDTreeToggle<CR>
+map <C-N> : Ag <CR>
+map <C-I> : Files <CR>
+
 map <C-j> : bn <CR>
 map <C-k> : bp <CR>
 map <C-h> : bd <CR>
-map <leader>m :!make <CR>
+
+map <leader>m :w <CR> :!make <CR>
 map qq :q! <CR>
+map wq :wq <CR>
 
 nnoremap <Up> : NextColorScheme <CR>
 nnoremap <Down> : PrevColorScheme <CR>
