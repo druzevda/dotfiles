@@ -15,7 +15,7 @@ alias lynx='lynx -vikeys'
 alias la='ls -A'
 alias l='ls -CF'
 alias gitlog='git log --graph --oneline --pretty=short'
-alias vim='vifm'
+alias vim='vim'
 alias vi='vifm'
 
 set -o vi
