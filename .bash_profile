@@ -29,6 +29,7 @@ pur='\[\033[01;35m\]'   # Purple
 cyn='\[\033[01;36m\]'   # Cyan
 wht='\[\033[01;37m\]'   # White
 clr='\[\033[00m\]'      # Reset
+git config --global core.editor "vim --nofork"
 
 function git_branch() {
   printf "%s" "$(git branch 2> /dev/null | awk '/\*/{print $2}')";
