@@ -35,6 +35,6 @@ function git_branch() {
 }
 
 function bash_prompt(){
-  PS1=${ylw}'\h ${debian_chroot:+($debian_chroot)}'${blu}'('${red}'$(git_branch)'${blu}')'${pur}' \w'${grn}' \$ '${clr}
+  PS1=${ylw}'\u'${clr}'@'${ylw}'\h ${debian_chroot:+($debian_chroot)}'${blu}'('${red}'$(git_branch)'${blu}')'${pur}' \w'${grn}' \$ '${clr}
 }
 bash_prompt
