@@ -19,10 +19,11 @@ alias l='ls -CF'
 alias vim='vim'
 alias vi='vifm'
 
-alias gitsta='git status --untracked-files=all --ignored=no'
-alias gitcom='git commit'
-alias gitadd='git add'
-alias gitlog='git log --graph --oneline --pretty=short'
+alias gits='git status --untracked-files=all --ignored=no'
+alias gitc='git commit'
+alias gita='git add'
+alias gitl='git log --graph --oneline --pretty=short'
+alias gitp='git push'
 
 set -o vi
 
