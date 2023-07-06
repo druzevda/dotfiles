@@ -10,13 +10,19 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 
 # some more ls aliases
 alias idea='~/Downloads/idea-IU-222.4345.14/bin/idea.sh > /dev/null 2> /dev/null &'
-alias ll='ls -alhtF'
 alias lynx='lynx -vikeys'
+
+alias ll='ls -alhtF'
 alias la='ls -A'
 alias l='ls -CF'
-alias gitlog='git log --graph --oneline --pretty=short'
+
 alias vim='vim'
 alias vi='vifm'
+
+alias gitsta='git status --untracked-files=all --ignored=no'
+alias gitcom='git commit'
+alias gitadd='git add'
+alias gitlog='git log --graph --oneline --pretty=short'
 
 set -o vi
 
