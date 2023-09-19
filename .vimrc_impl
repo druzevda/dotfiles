@@ -11,6 +11,9 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 \| endif
 """"""""""""""""""""""""""""""""""""""""""""""
 
+set foldmethod=indent
+set foldlevelstart=99
+
 set nocp
 filetype plugin on
 " configure tags - add additional tags here or comment out not-used ones
@@ -121,6 +124,9 @@ nnoremap Y y$
 
 nnoremap j gj
 nnoremap k gk
+
+nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
+vnoremap <Space> zf
 
 map <leader>ll :w <CR>
 "autocmd FileType javascript,c,cpp,objc map <leader>ll :ClangFormat <CR> :w <CR>
