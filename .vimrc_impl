@@ -23,8 +23,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'xolox/vim-colorscheme-switcher'
     Plug 'xolox/vim-misc'
 
-    " Plug 'jiangmiao/auto-pairs'
-    Plug 'rstacruz/vim-closer'
+    Plug 'jiangmiao/auto-pairs'
+    " Plug 'rstacruz/vim-closer'
     "Plug 'ctrlpvim/ctrlp.vim'
     Plug 'easymotion/vim-easymotion'
     Plug 'pbrisbin/vim-colors-off'
