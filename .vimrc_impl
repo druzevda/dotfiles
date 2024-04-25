@@ -99,7 +99,7 @@ map <C-j> : bn <CR>
 map <C-k> : bp <CR>
 map <C-h> : bd <CR>
 
-map <leader>m :w <CR> :!make <CR>
+map <leader>m :terminal <CR>
 map qq :q! <CR>
 map wq :wq <CR>
 
