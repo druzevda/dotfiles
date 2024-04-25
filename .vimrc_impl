@@ -23,8 +23,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'xolox/vim-colorscheme-switcher'
     Plug 'xolox/vim-misc'
 
-    " Plug 'jiangmiao/auto-pairs'
-    Plug 'rstacruz/vim-closer'
+    Plug 'jiangmiao/auto-pairs'
+    " Plug 'rstacruz/vim-closer'
     "Plug 'ctrlpvim/ctrlp.vim'
     Plug 'easymotion/vim-easymotion'
     Plug 'pbrisbin/vim-colors-off'
@@ -105,6 +105,8 @@ map wq :wq <CR>
 
 nnoremap <Up> : NextColorScheme <CR>
 nnoremap <Down> : PrevColorScheme <CR>
+nnoremap <Left> :set relativenumber number <CR>
+nnoremap <Right> :set  norelativenumber nonumber <CR>
 
 nnoremap Y y$
 
