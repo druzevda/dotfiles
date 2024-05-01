@@ -26,6 +26,7 @@ alias gitl='git log --graph --oneline --pretty=short'
 alias gitp='git push'
 
 set -o vi
+export EDITOR=vim
 
 blk='\[\033[01;30m\]'   # Black
 red='\[\033[01;31m\]'   # Red

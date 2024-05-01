@@ -12,7 +12,6 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 
 call plug#begin('~/.vim/plugged')
     Plug 'machakann/vim-highlightedyank'
-    Plug 'mhinz/vim-startify'
     Plug 'ap/vim-buftabline'
     Plug 'ap/vim-css-color'
     Plug 'tpope/vim-commentary'
@@ -23,8 +22,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'xolox/vim-colorscheme-switcher'
     Plug 'xolox/vim-misc'
 
-    " Plug 'jiangmiao/auto-pairs'
-    Plug 'rstacruz/vim-closer'
+    Plug 'jiangmiao/auto-pairs'
+    " Plug 'rstacruz/vim-closer'
     "Plug 'ctrlpvim/ctrlp.vim'
     Plug 'easymotion/vim-easymotion'
     Plug 'pbrisbin/vim-colors-off'
@@ -69,7 +68,7 @@ set encoding=utf8
 set fileencodings=utf-8,cp1251,koi8-r,cp866
 
 set mousehide
-set textwidth=100
+set textwidth=120
 set wrapmargin=0
 set formatoptions+=t
 
@@ -89,8 +88,10 @@ set whichwrap+=<,>,h,l,[,]
 let mapleader = ","
 map <leader> <Plug>(easymotion-prefix)
 nmap f <Plug>(easymotion-overwin-f)
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
+" map <Leader>j <Plug>(easymotion-j)
+" map <Leader>k <Plug>(easymotion-k)
+
+map <leader> :T
 
 map <C-N> : Ag <CR>
 map <C-P> : Files <CR>
@@ -99,9 +100,9 @@ map <C-j> : bn <CR>
 map <C-k> : bp <CR>
 map <C-h> : bd <CR>
 
-map <leader>m :w <CR> :!make <CR>
-map qq :q! <CR>
-map wq :wq <CR>
+map <leader>m :term ++curwin make<CR>
+" map qq :q! <CR>
+" map wq :wq <CR>
 
 nnoremap <Up> : NextColorScheme <CR>
 nnoremap <Down> : PrevColorScheme <CR>
@@ -115,11 +116,12 @@ nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 vnoremap <Space> zf
 
 map <leader>ll :w <CR>
-"autocmd FileType javascript,c,cpp,objc map <leader>ll :ClangFormat <CR> :w <CR>
-"autocmd FileType javascript,c,cpp,objc nnoremap <buffer><Leader>f :<C-u>ClangFormat<CR>
-"autocmd FileType javascript,cpp,objc vnoremap <buffer><Leader>f :ClangFormat<CR>
-"autocmd FileType c,cpp,objc ClangFormatAutoToggle
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+command! -complete=shellcmd -nargs=+ T call s:RunShellCommand(<q-args>)
+function! s:RunShellCommand(cmdline) abort
+    exe 'vert terminal '. a:cmdline
+endfunction
 
 "autoclose for nerdtree when vim closed
 autocmd BufEnter *
