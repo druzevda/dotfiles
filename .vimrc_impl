@@ -106,6 +106,8 @@ map <leader>m :term ++curwin make<CR>
 
 nnoremap <Up> : NextColorScheme <CR>
 nnoremap <Down> : PrevColorScheme <CR>
+nnoremap <Left> :set relativenumber number <CR>
+nnoremap <Right> :set  norelativenumber nonumber <CR>
 
 nnoremap Y y$
 
