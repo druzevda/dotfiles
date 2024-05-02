@@ -91,7 +91,7 @@ nmap f <Plug>(easymotion-overwin-f)
 " map <Leader>j <Plug>(easymotion-j)
 " map <Leader>k <Plug>(easymotion-k)
 
-map <leader> :T
+map <leader> :T<space>
 
 map <C-N> : Ag <CR>
 map <C-P> : Files <CR>
